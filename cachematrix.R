@@ -1,7 +1,7 @@
-## Put comments here that give an overall description of what your
-## functions do
+## if "a" is invertible matrix then cacheSolve(makeCacheMatrix(a)) returns inverse matrix
+## either from cash or if it doesn't exist in cash it calculates inverse matrix and cashes it before returning it
 
-## Write a short comment describing this function
+## function makeCacheMatrix creates an object that can cache inverse of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
   i <- NULL
@@ -18,7 +18,10 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## function cacheSolve returns inverse matrix
+##its first parameter is the object returned by makeCacheMatrix function
+##If the inverse has already been calculated for the given matrix then the function retrieves the inverse from the cache
+##If the inverse has not been previously calculated then it is calculated and cashed
 
 cacheSolve <- 
   function(x, ...) {
